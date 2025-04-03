@@ -1,0 +1,4 @@
+-Hacer footer
+- Mas menu
+- Agregar al carrito
+- Carrito

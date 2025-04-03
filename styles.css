@@ -1,0 +1,623 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --black: #1a1818;
+    --yellow: #fb8c00;
+    --dark-letter: #333;
+}
+
+
+
+
+main {
+    width: 100%;
+    margin: 0 auto;
+}
+
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+h2{
+    font-size: 2.4rem;
+    color: var(--dark-letter);
+}
+
+/* ==============================
+============= HERO =============== 
+=================================== */
+.hero
+ {
+    display: grid;
+    grid-template-columns: minmax(350px, 2fr) 3fr;
+    grid-template-rows: auto;
+    background-color: var(--black);  
+    justify-content: space-evenly;
+    align-content: center;  
+    height: 100vh;
+}
+.hero .header{
+    grid-column: 1 / 2;
+    width: 100%;
+    height: 8vh;
+    color: var(--dark-letter);
+    font-weight: 600;
+    font-size: 24px;
+
+    gap: 10px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    justify-content: space-evenly;
+    position: relative;
+}
+.hero .info{
+    grid-column: 1 / 2;
+    justify-content: space-evenly;
+}
+
+.hero .header li{
+    position: relative;
+}
+.hero .header li:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    background-color: #fb8c00;
+    transform: scale(0);
+    transform-origin: bottom right;
+    transition: transform 0.4s ease-out;
+}
+.hero .header li a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+.hero .header li:hover:after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.hero div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero .hero-image {
+    width: 100%;
+    height: 80%;
+    object-fit: contain;
+}
+.info {
+    align-self: center;
+    display: flex;
+    height: 80%;
+    flex-direction: column;
+
+    text-align: center;
+    margin: 0 auto;
+    justify-content: space-evenly;
+}
+.info h1 {
+    color: white;
+    font-size: 6rem;
+    font-family: "Fredericka the Great", serif;
+    font-weight: bolder;
+    margin-bottom: 24px;
+}
+.info p {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+    padding: 10px;
+}
+.info button {
+    border:none;
+    width: 150px;
+    margin: 0 auto;
+    height: auto;
+    border-radius: 20px;
+    color: var(--dark-letter);
+    background-color: var(--yellow);
+    font-weight: bolder;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* ==============================
+============ DISHES ============== 
+=================================== */
+.dishes {
+    margin: 100px 0;
+}
+.dishes-title {
+    margin-bottom: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+.dishes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(150px, 22%));
+    grid-auto-rows: 1fr;
+    gap: 25px;
+    justify-content: center;
+    cursor: pointer;
+}
+.dishes-grid img:hover {
+    transform: scale(1.01);
+    box-shadow:  7px 7px 14px #d9d2d2,
+    -7px -7px 14px #ffffff;
+
+}
+.dishes-item {
+    width: 100%;
+    height:100%;
+    object-fit:cover;
+}
+.dishes-item--big {
+    grid-area: 1 / 1 / 3 / 3;
+}
+
+/* ==============================
+============= MENU =============== 
+=================================== */
+.banners {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas de igual tamaño */
+    grid-template-rows: repeat(3, auto); /* 3 filas con altura automática */
+    box-shadow:  8px 8px 16px #bebebe,
+    -8px -8px 16px #ffffff;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    grid-template-areas: 
+        "eat postre postre postre"
+        "almuerzo almuerzo almuerzo and"
+        "rock rock bebida bebida";
+}
+
+.banner-letters{
+    font-family: "Fredericka the Great", serif;
+    font-size: 8rem;
+    display: flex;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+}
+.eat{
+    grid-area: eat;
+
+}
+.and{
+    grid-area: and;
+
+}
+.rock{
+    grid-area: rock;
+    transform: rotate(-14deg);
+    padding-left: 30px;
+}
+.banner-container {
+    width: 100%;
+    height: 300px; /* Ajusta la altura según necesites */
+}
+
+.postres {
+    grid-area: postre;
+}
+
+.bebidas {
+    grid-area: bebida;
+}
+
+.almuerzos {
+    grid-area: almuerzo;
+}
+
+.banner-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen llene el contenedor sin distorsionarse */
+    border-radius: 8px; /* Opcional: bordes redondeados */
+}
+/* ==============================
+============= MENU =============== 
+=================================== */
+.menu {
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: 10% 90%;
+    grid-template-rows: auto;
+
+}
+
+.menu-title {
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+    height: 100%;
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.burger-menu{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    width: 70px;
+    height: 70px;
+    background-color: #fb8c00;
+    border-radius: 50%;
+    cursor: pointer;
+
+    position: fixed;
+    
+    z-index: 100000;
+    top: 20px;
+    left: 40px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+
+}
+.burger-menu img{
+    width: 60px;
+    margin: 0 auto;
+}
+.aside-container{
+    position: fixed;
+    top: 0;
+    left: -250px; /* Oculto fuera de la pantalla */
+    width: 150px;
+    height: 100vh;
+    background-color: #fb8c00;
+    transition: left 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+    z-index: 10000;
+}
+.aside-container.active {
+    left: 0;
+    transform: translateX(0);
+
+}
+.aside{
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    background-color: #fb8c00;
+    height: 100vh;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+}
+.aside li{
+    width: 150px;
+    height: 40px;
+    border-radius: 10px 0 0 10px;
+
+    cursor: pointer;
+    background: transparent;
+    transition: background 0.3s ease;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.aside li:hover{
+    background-color: white;
+}
+.aside li.active{
+    background:white;
+    border: 2px solid black;
+    border-right: none;
+}
+.menu-icons {
+    all: unset;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 75px;
+    height: 75px;
+    z-index: 10000;
+    position: relative;
+    display: block;
+}
+
+.all-options{
+    background-image: url('./images/icons/menu-icon.svg');
+}
+.meat-options{
+    background-image: url('./images/icons/all-dishes-icon.svg');
+}
+.vegetarian-options{
+    background-image: url('./images/icons/vegetarian-icon.svg');
+}
+.drinks-options{
+    background-image: url('./images/icons/drinks-icon.svg');
+}
+.cafe-options{
+    background-image: url('./images/icons/cafe-icon.svg');
+}
+.deserts-options{
+    background-image: url('./images/icons/deserts-icon.svg');
+}
+
+.menu-grid {
+    display: grid;
+    grid-column: 2 / 3;
+    height: 100vh;
+    grid-template-columns: repeat(auto-fit, 300px);
+    gap: 25px;
+    padding-left: 20px;
+
+    text-align: center;
+    justify-content: flex-start;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+
+}
+.menu-grid-item {
+    background-color: var(--black);  
+    padding: 25px 15px;
+    border-top-left-radius: 40px;
+    /* border-top-right-radius: 40px; */
+    width: 300px;
+    height: 300px;
+}
+/* .menu-grid-item:hover{
+    background-color: var(--yellow);;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 40px;
+    transition-duration: 0.2s;
+    transition-property: all;
+} */
+.menu-grid-item img {
+    width: 85%;
+    height: 85%;
+    object-fit: contain;
+}
+
+.menu-grid--text {
+    font-size: 18px;
+    color: whitesmoke;
+}
+
+.menu-grid--text p{
+    font-size: 20px;
+    color: whitesmoke;
+}
+
+.menu-grid--text p span{
+    font-size: 22px;
+    color: whitesmoke;
+}
+
+/* ============================== */
+/* ======= PAYMENT SECTION ====== */
+/* ============================== */
+
+.pay {
+    height: 70vh;
+    margin: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+
+}
+
+/* Contenedor del texto con la flecha */
+.pay-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 250px;
+    min-width: 300px;
+    
+    background-color: var(--dark-letter);
+    border-radius: 20px;
+    
+
+    transform: rotate(30deg);
+    
+    animation: move-box 1s ease-out forwards;
+    @media(max-width: 730px){
+        display: none;
+    }
+}
+
+/* Flecha en el fondo */
+.pay-box::before {
+    content: "";
+    position: absolute;
+    right: -40px; /* Ajusta el tamaño y posición de la punta */
+    top: 50%;
+    transform: translateY(50%);
+    width: 0;
+    height: 0;
+    border-left: 40px solid var(--dark-letter);
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+}
+
+/* Animación de la caja */
+@keyframes move-box {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Texto dentro del fondo */
+.pay-text {
+    font-size: 3rem;
+    color: whitesmoke;
+    text-align: center;
+    padding: 10px 20px;
+    font-weight: bold;
+     @media(max-width: 780px){
+        display: none;
+     }
+}
+
+/* Imagen */
+.pay-img {
+    position: relative;
+    width: 500px;
+    min-width: 300px;
+    height: auto;
+    display: flex; 
+    justify-content: center;
+}
+.pay-img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* ==============================
+============= FOOTER =============== 
+====================================== */
+footer{
+    background-color: var(--black);
+    color: whitesmoke;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    text-align: center;
+
+}
+.map-section, .redes-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.map-section div {
+    padding-bottom: 20px;
+    max-width: 300px;
+    min-width: 200px;
+}
+.map-section  h3,
+.redes-section h3,
+.whose-section h3{
+    font-size: 30px;
+    padding: 20px;
+}
+.whose-section{
+    width: 33.3%;
+
+}
+.whose-section p,
+.map-section p,
+.redes-section li,
+redes-section li a{
+    font-size: 18px;
+}
+.whose-section h3
+.redes-section{
+    padding: 20px;
+}
+
+.redes-section li{
+    padding-bottom: 24px;
+}
+.redes-section li a{
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    gap:20px;
+}
+
+.ig-img{
+    background-image: url('./images/icons/instagram.svg');
+}
+.ws-img{
+    background-image: url('./images/icons/icon-wsp.svg');
+}
+.redes-img{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 45px;
+    height: 45px;
+}
+
+@media screen and (max-width: 768px) {
+    .hero {
+        grid-template-columns: minmax(300px, 500px);
+        justify-content: center;
+    }
+    .hero-image {
+        display: none;
+    }
+    .hero .info{
+        gap: 20px;
+    }
+    .dishes-grid {
+        grid-template-columns: repeat(auto-fit, minmax(75px, 100px));
+    }
+    .pay-img::after {
+        content: "ALL PAYMENTS";
+        position: absolute;
+        bottom: -40px;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Centra el texto */
+
+        color: white;
+        font-size: 3rem;
+        font-weight: bold;
+        text-align: center;
+        z-index: 10;
+         /* Fondo oscuro semitransparente */
+        padding: 10px 20px;
+        border-radius: 10px;
+
+        z-index: 10; /* Se asegura de que el texto esté sobre la imagen */
+        width: max-content;
+        @media(max-width: 480px){
+            font-size: 2.2rem;
+        }
+    }
+
+}
+
+ @media(max-width:1000px){
+    
+    .menu-icons.active {
+        display: flex;
+    }
+
+    footer{
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .whose-section{
+        width: 100%;
+    }
+
+} 
